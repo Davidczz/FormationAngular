@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Selfie } from './model/selfie';
+import { LoggerService } from './shared/services/logger/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,15 @@ export class AppComponent {
   title = 'Selfie à wookie';
   subtitle = 'My Subtitle';
   afficheLogo = true;
-  listSelfie:Selfie[] = [
-    { image: '', wookie: { name : 'David', selfies: []} },
-    { image: '', wookie: { name : 'Noémie', selfies: []} }
-  ]
+  valeurRecherche = '';
+
+  constructor(private loggerService: LoggerService) {
+
+  }
+
+  rechercherSelfie(valeur: string) {
+    this.loggerService.log(valeur)
+    this.valeurRecherche = valeur;
+  } 
+
 }

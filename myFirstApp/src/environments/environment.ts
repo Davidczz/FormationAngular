@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apis:{
     wookie : {
-      url: 'http://localhost/'
+      url: 'https://91467100-63cc-4151-bf46-f78d3300f5ef.mock.pstmn.io/selfies'
     }
   }
 };

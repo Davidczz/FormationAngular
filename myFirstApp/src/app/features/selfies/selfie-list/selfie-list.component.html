@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-success" (click)="demandeAjout()">Ajouter un selfie</button>
+    </div>
+</div>
+
+<app-add-selfie *ngIf="selfieAAjouter"></app-add-selfie>
+
+<app-un-selfie-readonly [unselfie]="selfie" *ngFor="let selfie of listSelfie"></app-un-selfie-readonly>
+
+
