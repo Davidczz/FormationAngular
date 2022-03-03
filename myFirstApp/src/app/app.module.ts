@@ -7,6 +7,7 @@ import { SelfieListComponent } from './features/selfies/selfie-list/selfie-list.
 import { UnSelfieReadonlyComponent } from './features/selfies/un-selfie-readonly/un-selfie-readonly.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddSelfieComponent } from './features/selfies/add-selfie/add-selfie.component'
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddSelfieComponent } from './features/selfies/add-selfie/add-selfie.com
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

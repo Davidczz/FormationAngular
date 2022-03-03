@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<app-add-selfie *ngIf="selfieAAjouter"></app-add-selfie>
+<app-add-selfie (addCanceled)="cancelAdd()" *ngIf="selfieAAjouter" [selfieToAdd]="selfieAAjouter"></app-add-selfie>
 
 <app-un-selfie-readonly [unselfie]="selfie" *ngFor="let selfie of listSelfie"></app-un-selfie-readonly>
 

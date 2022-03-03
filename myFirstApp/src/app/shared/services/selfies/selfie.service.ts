@@ -11,14 +11,11 @@ export class SelfieService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getWookiesSelfies(): Selfie[] {
-    const wookieList: Selfie[] = [];
-
-    wookieList.push({ image: 'https://i.ytimg.com/vi/M1vQmU39uV8/maxresdefault.jpg', wookie: { name : 'David', selfies: []}, titre: 'Mon Beau selfie' })
-    return wookieList;
-  }
-
   getAllAsObservable(): Observable<Selfie[]> {
     return this.httpClient.get<Selfie[]>(environment.apis.wookie.url);
+  }
+
+  ajouter(selfie: Selfie):Observable<Selfie> {
+    return this.httpClient.post<Selfie>(environment.apis.wookiePost.url, selfie);
   }
 }

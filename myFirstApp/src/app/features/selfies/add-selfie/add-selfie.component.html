@@ -1,1 +1,17 @@
-<p>add-selfie works!</p>
+
+<form #formSelfieAdd="ngForm">
+  <div *ngIf="selfieToAdd != null">
+  <div class="row">
+    <div class="col">Titre</div>
+    <div class="col">
+      <input type="text" #titre="ngModel" class="form-control" [(ngModel)]="selfieToAdd.titre" name="titre" required>
+      <span [hidden]="titre.valid">Titre Obligatoire</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col"><button type="submit"  [disabled]="!formSelfieAdd.form.valid" (click)="ajouterClicked()" class="btn btn-primary">Ajouter</button></div>
+    <div class="col"><button type="button" class="btn btn-secondary" (click)="cancelAdd()">Annuler</button></div>
+  </div>
+</div></form>
+

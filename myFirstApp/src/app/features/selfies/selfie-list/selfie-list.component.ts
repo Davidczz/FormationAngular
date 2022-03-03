@@ -11,15 +11,15 @@ import { SelfieService } from 'src/app/shared/services/selfies/selfie.service';
 export class SelfieListComponent implements OnInit, OnDestroy {
 
   @Input()
-  set filtre(valeur:string){
-    console.log('SelfieListComponent', valeur);
+  set filtre(value:string){
+    console.log('SelfieListComponent', value);
   }
 
   lesSubs:Subscription[] = [];
 
   listSelfie!:Selfie[];
 
-  public selfieAAjouter!:Selfie;
+  public selfieAAjouter:Selfie|null = null;
 
   constructor(private selfieService:SelfieService) { }
 
@@ -34,7 +34,11 @@ export class SelfieListComponent implements OnInit, OnDestroy {
       this.lesSubs.push(currentSubscription);
   }
 
-  demandeAjout() : void { 
+  demandeAjout() : void {
     this.selfieAAjouter = new Selfie();
+  }
+
+  cancelAdd() {
+    this.selfieAAjouter = null;
   }
 }

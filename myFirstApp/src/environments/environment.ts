@@ -7,6 +7,9 @@ export const environment = {
   apis:{
     wookie : {
       url: 'https://91467100-63cc-4151-bf46-f78d3300f5ef.mock.pstmn.io/selfies'
+    },
+    wookiePost: {
+      url: 'https://e9dbfcee-a23f-4ed3-a158-e365359e0097.mock.pstmn.io/selfie'
     }
   }
 };
